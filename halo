@@ -1,3 +1,15 @@
+import random
+tablica = []
+for i in range(4):
+  tablica.append(random.randint(1,8))
+print(tablica)
+
+
+
+
+
+
+
 def sprawdzenie(lista):
   if lista == []:
     return 0
