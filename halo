@@ -18,3 +18,28 @@ def sprawdzenie(lista):
       return 1
     else:
       return 0 + sprawdzenie(lista[1:])
+
+###for i in range(10):
+
+
+print ("Wpisz 4 cyfry")
+pusta = []
+for i in range(4):
+  zmienna = int(input())
+  pusta.append(zmienna)
+print(pusta)
+
+
+if sprawdzenie(pusta) == 1:
+  print("nieprawidłowy element")
+else:
+  for i in range(len(pusta)):
+    if pusta[i] == tablica[i]:
+      print("X")
+    else:
+      for j in range(len(tablica)):
+         if tablica[j]== pusta[i]:
+           print("o")
+          #  elementy powinny byc usuwane z tablicy po trafieniu chyba
+          # trzeba wymieszac x i o tak zeby nie bylo wiadomo ktory element jest 
+          # dobry a który zły    
