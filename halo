@@ -30,16 +30,26 @@ for i in range(4):
 print(pusta)
 
 
+
+
 if sprawdzenie(pusta) == 1:
   print("nieprawidłowy element")
 else:
+  punkty = 0
   for i in range(len(pusta)):
     if pusta[i] == tablica[i]:
+      punkty+=1
       print("X")
     else:
       for j in range(len(tablica)):
          if tablica[j]== pusta[i]:
            print("o")
+  if punkty == 4:
+    print("WYGRAŁEŚ!")
+
+           
+           
+           
           #  elementy powinny byc usuwane z tablicy po trafieniu chyba
           # trzeba wymieszac x i o tak zeby nie bylo wiadomo ktory element jest 
           # dobry a który zły    
