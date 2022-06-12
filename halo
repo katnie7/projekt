@@ -48,5 +48,17 @@ else:
   if punkty == 4:
     print("WYGRAŁEŚ!")
 
-           
+lista_xo = []
+if sprawdzenie(pusta) == 1:
+  print("nieprawidłowy element")
+else:
+  for i in range(len(pusta)):
+      if pusta[i] == tablica[i]:
+          lista_xo.append("x")
+      else:
+          for j in range(len(tablica)):
+              if tablica[j]== pusta[i]:
+                  lista_xo.append("o")
+random.shuffle(lista_xo)
+print(lista_xo)
            
