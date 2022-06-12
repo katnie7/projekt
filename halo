@@ -7,6 +7,7 @@ for i in range(4):
     wybor.remove(usunieta)
 print(tablica)
 
+
 class kolory():
     green = '\033[1;32;40m'
     yellow = '\033[1;33;40m'
@@ -17,8 +18,8 @@ class kolory():
     cyan = '\033[1;36;40m'
     white = '\033[1;37;40m'
     reset_color = '\033[0m'
-    
-print('Dostępne cyfry:')        
+
+print('Dostępne cyfry:')
 print(kolory.green + '1' + kolory.reset_color)
 print(kolory.yellow + '2' + kolory.reset_color)
 print(kolory.red + '3' + kolory.reset_color)
@@ -27,6 +28,8 @@ print(kolory.blue + '5' + kolory.reset_color)
 print(kolory.pink + '6' + kolory.reset_color)
 print(kolory.cyan + '7' + kolory.reset_color)
 print(kolory.white + '8' + kolory.reset_color)
+
+print('Legenda: \n \"x\" - jest liczba w kodzie, ale na złym miejscu \n \"X\" - jest liczba w kodzie na dobrym miejscu \n \"o\" - nie ma liczby w kodzie')
 
 wygrana=0
 for i in range(10):
@@ -49,37 +52,31 @@ for i in range(10):
     kolory.remove(usunieta)
     print(pusta)
 
-
-
-
-
-
-if sprawdzenie(pusta) == 1:
-  print("nieprawidłowy element")
-else:
-  punkty = 0
-  for i in range(len(pusta)):
-    if pusta[i] == tablica[i]:
-      punkty+=1
-      print("X")
+    punkty = []
+    if tablica == pusta:
+        print("BRAWO! wygrałeś!")
+        wygrana = 1
+        break
     else:
-      for j in range(len(tablica)):
-         if tablica[j]== pusta[i]:
-           print("o")
-  if punkty == 4:
-    print("WYGRAŁEŚ!")
+        for i in range(len(pusta)):
+            if pusta[i] == tablica[i]:
+                punkty.append("X")
+            else:
+                for j in range(len(tablica)):
+                    if tablica[j] == pusta[i]:
+                        punkty.append("x")
+        if len(punkty) != 4:
+            ile = 4-len(punkty)
+            for i in range(ile):
+                punkty.append("o")
+        random.shuffle(punkty)
+        print(punkty)
+if wygrana == 0:
+    print("niestety przegrałeś :c spróbuj jeszcze raz!")
 
-lista_xo = []
-if sprawdzenie(pusta) == 1:
-  print("nieprawidłowy element")
-else:
-  for i in range(len(pusta)):
-      if pusta[i] == tablica[i]:
-          lista_xo.append("x")
-      else:
-          for j in range(len(tablica)):
-              if tablica[j]== pusta[i]:
-                  lista_xo.append("o")
-random.shuffle(lista_xo)
-print(lista_xo)
-           
+
+
+
+
+
+
