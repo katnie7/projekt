@@ -7,6 +7,27 @@ for i in range(4):
     wybor.remove(usunieta)
 print(tablica)
 
+class kolory():
+    green = '\033[1;32;40m'
+    yellow = '\033[1;33;40m'
+    red = '\033[1;31;40m'
+    gray = '\033[1;30;40m'
+    blue = '\033[1;34;40m'
+    pink = '\033[1;35;40m'
+    cyan = '\033[1;36;40m'
+    white = '\033[1;37;40m'
+    reset_color = '\033[0m'
+    
+print('Dostępne cyfry:')        
+print(kolory.green + '1' + kolory.reset_color)
+print(kolory.yellow + '2' + kolory.reset_color)
+print(kolory.red + '3' + kolory.reset_color)
+print(kolory.gray + '4' + kolory.reset_color)
+print(kolory.blue + '5' + kolory.reset_color)
+print(kolory.pink + '6' + kolory.reset_color)
+print(kolory.cyan + '7' + kolory.reset_color)
+print(kolory.white + '8' + kolory.reset_color)
+
 wygrana=0
 for i in range(10):
     print("Wpisz 4 cyfry")
