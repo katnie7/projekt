@@ -1,33 +1,32 @@
 import random
 tablica = []
+wybor = [1,2,3,4,5,6,7,8]
 for i in range(4):
-  tablica.append(random.randint(1,8))
+ tablica.append(random.choice(wybor))
+ usunieta = tablica[i]
+ wybor.remove(usunieta)
 print(tablica)
 
 
 
 
 
+wygrana=0
+for i in range(10):
+ print("Wpisz 4 cyfry")
+ pusta = []
+ kolory = [1,2,3,4,5,6,7,8]
+ for i in range(4):
+ zmienna = int(input())
+ while zmienna not in kolory:
+ print("niewłaściwy kolor")
+ zmienna = int(input())
+ pusta.append(zmienna)
+ usunieta = pusta[i]
+ kolory.remove(usunieta)
+ print(pusta)
 
 
-def sprawdzenie(lista):
-  if lista == []:
-    return 0
-  else:
-    if lista[0]!= 1 and lista[0] != 2 and lista[0] != 3 and lista[0]!= 4 and lista[0]!= 5 and lista[0]!= 6 and lista[0]!= 7 and lista[0]!= 8:
-      return 1
-    else:
-      return 0 + sprawdzenie(lista[1:])
-
-###for i in range(10):
-
-
-print ("Wpisz 4 cyfry")
-pusta = []
-for i in range(4):
-  zmienna = int(input())
-  pusta.append(zmienna)
-print(pusta)
 
 
 
@@ -49,7 +48,3 @@ else:
 
            
            
-           
-          #  elementy powinny byc usuwane z tablicy po trafieniu chyba
-          # trzeba wymieszac x i o tak zeby nie bylo wiadomo ktory element jest 
-          # dobry a który zły    
