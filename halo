@@ -2,34 +2,31 @@ import random
 tablica = []
 wybor = [1,2,3,4,5,6,7,8]
 for i in range(4):
- tablica.append(random.choice(wybor))
- usunieta = tablica[i]
- wybor.remove(usunieta)
+    tablica.append(random.choice(wybor))
+    usunieta = tablica[i]
+    wybor.remove(usunieta)
 print(tablica)
-
-
-
-
 
 wygrana=0
 for i in range(10):
- print("Wpisz 4 cyfry")
- pusta = []
- kolory = [1,2,3,4,5,6,7,8]
+    print("Wpisz 4 cyfry")
+    pusta = []
+    kolory = [1,2,3,4,5,6,7,8]
 
- zmienna1, zmienna2, zmienna3, zmienna4 = map(int,input().split())
- while zmienna1 not in kolory or zmienna2 not in kolory or zmienna3 not in kolory or zmienna4 not in kolory:
-  print("Niewłaściwy kolor")
- if zmienna1 == zmienna2 or zmienna1 == zmienna2 or zmienna1== zmienna3 or zmienna1== zmienna4 or zmienna2 == zmienna3 or zmienna2 == zmienna4 or zmienna3 == zmienna4:
-  print("Podałeś dwa razy tę samą liczbę, podaj cyfry jeszcze raz")
-  zmienna1, zmienna2, zmienna3, zmienna4 = map(int, input().split())
-  pusta.append(zmienna1)
-  pusta.append(zmienna2)
-  pusta.append(zmienna3)
-  pusta.append(zmienna4)
-  usunieta = pusta[i]
-  kolory.remove(usunieta)
-  print(pusta)
+    zmienna1, zmienna2, zmienna3, zmienna4 = map(int, input().split())
+    while zmienna1 not in kolory or zmienna2 not in kolory or zmienna3 not in kolory or zmienna4 not in kolory:
+        print("Niewłaściwy kolor, podaj cyfry jeszcze raz")
+        zmienna1, zmienna2, zmienna3, zmienna4 = map(int, input().split())
+    if zmienna1 == zmienna2 or zmienna1 == zmienna2 or zmienna1== zmienna3 or zmienna1== zmienna4 or zmienna2 == zmienna3 or zmienna2 == zmienna4 or zmienna3 == zmienna4:
+        print("Podałeś dwa razy tę samą liczbę, podaj cyfry jeszcze raz")
+        zmienna1, zmienna2, zmienna3, zmienna4 = map(int, input().split())
+    pusta.append(zmienna1)
+    pusta.append(zmienna2)
+    pusta.append(zmienna3)
+    pusta.append(zmienna4)
+    usunieta = pusta[i]
+    kolory.remove(usunieta)
+    print(pusta)
 
 
 
