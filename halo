@@ -19,15 +19,17 @@ for i in range(10):
 
  zmienna1, zmienna2, zmienna3, zmienna4 = map(int,input().split())
  while zmienna1 not in kolory or zmienna2 not in kolory or zmienna3 not in kolory or zmienna4 not in kolory:
-  print("niewłaściwy kolor")
+  print("Niewłaściwy kolor")
+ if zmienna1 == zmienna2 or zmienna1 == zmienna2 or zmienna1== zmienna3 or zmienna1== zmienna4 or zmienna2 == zmienna3 or zmienna2 == zmienna4 or zmienna3 == zmienna4:
+  print("Podałeś dwa razy tę samą liczbę, podaj cyfry jeszcze raz")
   zmienna1, zmienna2, zmienna3, zmienna4 = map(int, input().split())
- pusta.append(zmienna1)
- pusta.append(zmienna2)
- pusta.append(zmienna3)
- pusta.append(zmienna4)
- usunieta = pusta[i]
- kolory.remove(usunieta)
- print(pusta)
+  pusta.append(zmienna1)
+  pusta.append(zmienna2)
+  pusta.append(zmienna3)
+  pusta.append(zmienna4)
+  usunieta = pusta[i]
+  kolory.remove(usunieta)
+  print(pusta)
 
 
 
