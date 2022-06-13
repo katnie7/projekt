@@ -9,7 +9,7 @@ class kolory():
     cyan = '\033[1;36;40m'
     white = '\033[1;37;40m'
     reset_color = '\033[0m'
-
+print("WITAJ W GRZE MASTER MIND")
 print('Dostępne cyfry:')
 print(kolory.green + '1' + kolory.reset_color)
 print(kolory.yellow + '2' + kolory.reset_color)
@@ -28,10 +28,10 @@ for i in range(4):
     tablica.append(random.choice(wybor))
     usunieta = tablica[i]
     wybor.remove(usunieta)
-print("Kod do złamania:", tablica)
 
 
-wygrana=0
+
+wygrana=False
 for i in range(10):
     print("\nWpisz 4 cyfry")
     pusta = []
@@ -48,14 +48,12 @@ for i in range(10):
     pusta.append(zmienna2)
     pusta.append(zmienna3)
     pusta.append(zmienna4)
-    usunieta = pusta[i]
-    kolory.remove(usunieta)
-    print(pusta)
+    print("Twoja próba:", pusta)
 
     punkty = []
     if tablica == pusta:
         print("BRAWO! wygrałeś!")
-        wygrana = 1
+        wygrana = True
         break
     else:
         for i in range(len(pusta)):
@@ -71,8 +69,9 @@ for i in range(10):
                 punkty.append("o")
         random.shuffle(punkty)
         print("Punktacja:", punkty)
-if wygrana == 0:
+if not wygrana:
     print("niestety przegrałeś :c spróbuj jeszcze raz!")
+print("To był kod do złamiana:", tablica)
 
 
 
