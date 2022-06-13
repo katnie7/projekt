@@ -1,13 +1,4 @@
 import random
-tablica = []
-wybor = [1,2,3,4,5,6,7,8]
-for i in range(4):
-    tablica.append(random.choice(wybor))
-    usunieta = tablica[i]
-    wybor.remove(usunieta)
-print(tablica)
-
-
 class kolory():
     green = '\033[1;32;40m'
     yellow = '\033[1;33;40m'
@@ -31,9 +22,18 @@ print(kolory.white + '8' + kolory.reset_color)
 
 print('Legenda: \n \"x\" - jest liczba w kodzie, ale na złym miejscu \n \"X\" - jest liczba w kodzie na dobrym miejscu \n \"o\" - nie ma liczby w kodzie')
 
+tablica = []
+wybor = [1,2,3,4,5,6,7,8]
+for i in range(4):
+    tablica.append(random.choice(wybor))
+    usunieta = tablica[i]
+    wybor.remove(usunieta)
+print("Kod do złamania:", tablica)
+
+
 wygrana=0
 for i in range(10):
-    print("Wpisz 4 cyfry")
+    print("\nWpisz 4 cyfry")
     pusta = []
     kolory = [1,2,3,4,5,6,7,8]
 
@@ -70,7 +70,7 @@ for i in range(10):
             for i in range(ile):
                 punkty.append("o")
         random.shuffle(punkty)
-        print(punkty)
+        print("Punktacja:", punkty)
 if wygrana == 0:
     print("niestety przegrałeś :c spróbuj jeszcze raz!")
 
